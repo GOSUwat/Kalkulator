@@ -16,5 +16,19 @@ namespace Kalkulator
         {
             InitializeComponent();
         }
+
+        private void обычныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form1();
+            form1.Show();
+            this.Hide();
+            
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

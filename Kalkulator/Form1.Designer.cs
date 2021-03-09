@@ -33,6 +33,7 @@ namespace Kalkulator
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разработчикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редакторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инфоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,6 +54,12 @@ namespace Kalkulator
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.задачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,17 +67,19 @@ namespace Kalkulator
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.инфоToolStripMenuItem});
+            this.инфоToolStripMenuItem,
+            this.задачиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(329, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(426, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.разработчикToolStripMenuItem});
+            this.разработчикToolStripMenuItem,
+            this.редакторToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -78,9 +87,16 @@ namespace Kalkulator
             // разработчикToolStripMenuItem
             // 
             this.разработчикToolStripMenuItem.Name = "разработчикToolStripMenuItem";
-            this.разработчикToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.разработчикToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.разработчикToolStripMenuItem.Text = "Разработчик";
             this.разработчикToolStripMenuItem.Click += new System.EventHandler(this.разработчикToolStripMenuItem_Click);
+            // 
+            // редакторToolStripMenuItem
+            // 
+            this.редакторToolStripMenuItem.Name = "редакторToolStripMenuItem";
+            this.редакторToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.редакторToolStripMenuItem.Text = "Редактор";
+            this.редакторToolStripMenuItem.Click += new System.EventHandler(this.редакторToolStripMenuItem_Click);
             // 
             // инфоToolStripMenuItem
             // 
@@ -95,7 +111,7 @@ namespace Kalkulator
             this.richTextBox1.Location = new System.Drawing.Point(12, 45);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.richTextBox1.Size = new System.Drawing.Size(305, 41);
+            this.richTextBox1.Size = new System.Drawing.Size(402, 41);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
@@ -233,7 +249,7 @@ namespace Kalkulator
             // 
             this.button14.Location = new System.Drawing.Point(260, 322);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(57, 42);
+            this.button14.Size = new System.Drawing.Size(154, 42);
             this.button14.TabIndex = 16;
             this.button14.Text = "=";
             this.button14.UseVisualStyleBackColor = true;
@@ -278,11 +294,73 @@ namespace Kalkulator
             this.label1.Size = new System.Drawing.Size(0, 31);
             this.label1.TabIndex = 20;
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(339, 178);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(75, 42);
+            this.button19.TabIndex = 22;
+            this.button19.Text = "Cos";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(339, 226);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 42);
+            this.button20.TabIndex = 23;
+            this.button20.Text = "Tg";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(339, 274);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 42);
+            this.button21.TabIndex = 24;
+            this.button21.Text = "Ctg";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(339, 130);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 42);
+            this.button22.TabIndex = 25;
+            this.button22.Text = "Sin";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(339, 92);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(57, 27);
+            this.button23.TabIndex = 26;
+            this.button23.Text = "CE";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // задачиToolStripMenuItem
+            // 
+            this.задачиToolStripMenuItem.Name = "задачиToolStripMenuItem";
+            this.задачиToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.задачиToolStripMenuItem.Text = "Задачи";
+            this.задачиToolStripMenuItem.Click += new System.EventHandler(this.задачиToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 392);
+            this.ClientSize = new System.Drawing.Size(426, 392);
+            this.Controls.Add(this.button23);
+            this.Controls.Add(this.button22);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.button20);
+            this.Controls.Add(this.button19);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button16);
@@ -307,6 +385,7 @@ namespace Kalkulator
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Калькулятор";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -339,6 +418,13 @@ namespace Kalkulator
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.ToolStripMenuItem редакторToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem задачиToolStripMenuItem;
     }
 }
 

@@ -14,6 +14,7 @@ namespace Kalkulator
     public partial class Form1 : Form
     {
         char c;
+        public int i = 0;
         public double a;
         public double b;
         public Form1()
@@ -73,39 +74,66 @@ namespace Kalkulator
 
         private void button16_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = richTextBox1.Text + ",";
+            
+            if (i == 0)
+            {
+                richTextBox1.Text = richTextBox1.Text + ",";
+            }
+            else
+            {
+                richTextBox1.Text = richTextBox1.Text + "";
+            }
+            i++;
+
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
-            c = '/';
-            a = Convert.ToDouble(richTextBox1.Text);
-            label1.Text = Convert.ToString(a) + c;
-            
+            try
+            {
+                c = '/';
+                a = Convert.ToDouble(richTextBox1.Text);
+                label1.Text = Convert.ToString(a) + c;
+                i = 0;
+            }
+            catch (Exception)
+            {
 
+            }
 
             richTextBox1.Text = "";
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            
-            c = '*';
-            a = Convert.ToDouble(richTextBox1.Text);
-            label1.Text = Convert.ToString(a) + c;
+            try
+            {
+                c = '*';
+                a = Convert.ToDouble(richTextBox1.Text);
+                label1.Text = Convert.ToString(a) + c;
+                i = 0;
+            }
+            catch (Exception)
+            {
 
-
+            }
 
             richTextBox1.Text = "";
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            
-            c = '-';
-            a = Convert.ToDouble(richTextBox1.Text);
-            label1.Text = Convert.ToString(a) + c;
+            try
+            {
+                c = '-';
+                a = Convert.ToDouble(richTextBox1.Text);
+                label1.Text = Convert.ToString(a) + c;
+                i = 0;
+            }
+            catch (Exception)
+            {
+                
+            }
 
 
 
@@ -115,11 +143,17 @@ namespace Kalkulator
 
         private void button13_Click(object sender, EventArgs e)
         {
-            
-            c = '+';
-            a = Convert.ToDouble(richTextBox1.Text);
-            label1.Text = Convert.ToString(a) + c;
+            try
+            {
+                c = '+';
+                a = Convert.ToDouble(richTextBox1.Text);
+                label1.Text = Convert.ToString(a) + c;
+                i = 0;
+            }
+            catch (Exception)
+            {
 
+            }
 
 
             richTextBox1.Text = "";
@@ -128,27 +162,37 @@ namespace Kalkulator
         private void button17_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            i = 0;
+            label1.Text = null;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            b = Convert.ToDouble(richTextBox1.Text);
-            switch (c)
+            try
             {
-                case '+':
-                    richTextBox1.Text = Convert.ToString(a + b);
-                    break;
-                case '-':
-                    richTextBox1.Text = Convert.ToString(a - b);
-                    break;
-                case '*':
-                    richTextBox1.Text = Convert.ToString(a * b);
-                    break;
-                case '/':
-                    richTextBox1.Text = Convert.ToString(a / b);
-                    break;
+                b = Convert.ToDouble(richTextBox1.Text);
+                switch (c)
+                {
+                    case '+':
+                        richTextBox1.Text = Convert.ToString(a + b);
+                        break;
+                    case '-':
+                        richTextBox1.Text = Convert.ToString(a - b);
+                        break;
+                    case '*':
+                        richTextBox1.Text = Convert.ToString(a * b);
+                        break;
+                    case '/':
+                        richTextBox1.Text = Convert.ToString(a / b);
+                        break;
+                }
+                 richTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDouble(richTextBox1.Text),4));
+                label1.Text = Convert.ToString(a) + c + Convert.ToString(b) + " = " + richTextBox1.Text;
             }
-            label1.Text = Convert.ToString(a) + c + Convert.ToString(b) + " = " + richTextBox1.Text;
+            catch (Exception)
+            {
+
+            }
             richTextBox1.Text = "";
 
 
@@ -156,14 +200,79 @@ namespace Kalkulator
 
         private void инфоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form2 = new Form2();
+            Form2 form2 = new Form2();
             form2.Show();
         }
 
         private void разработчикToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form3 = new Form3();
+            /*Form form3 = new Form3();
             form3.Show();
+            this.Hide();*/
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                richTextBox1.Text = richTextBox1.Text.Remove(richTextBox1.Text.Length - 1);
+            }
+            catch (Exception) { }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Convert.ToString(Math.Sin(Convert.ToDouble(richTextBox1.Text)));
+            richTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDouble(richTextBox1.Text), 4));
+            label1.Text = richTextBox1.Text;
+            richTextBox1.Text = "";
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Convert.ToString(Math.Cos(Convert.ToDouble(richTextBox1.Text)));
+            richTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDouble(richTextBox1.Text), 4));
+            label1.Text = richTextBox1.Text;
+            richTextBox1.Text = "";
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Convert.ToString(Math.Tan(Convert.ToDouble(richTextBox1.Text)));
+            richTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDouble(richTextBox1.Text), 4));
+            label1.Text = richTextBox1.Text;
+            richTextBox1.Text = "";
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Convert.ToString(Math.Cos(Convert.ToDouble(richTextBox1.Text))/Math.Sin(Convert.ToDouble(richTextBox1.Text)));
+            richTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDouble(richTextBox1.Text), 4));
+            label1.Text = richTextBox1.Text;
+            richTextBox1.Text = "";
+        }
+
+        private void редакторToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 red = new Form4();
+            red.Show();
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void задачиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 zadachi = new Form3();
+            zadachi.Show();
         }
     }
 }
